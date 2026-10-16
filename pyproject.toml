@@ -1,0 +1,23 @@
+[project]
+name = "inference-gateway"
+version = "0.1.0"
+description = "An OpenAI-compatible gateway that routes requests across LLM model servers"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "httpx",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+]
+
+[tool.setuptools]
+packages = ["gateway", "fakeserver", "loadgen", "evals"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
